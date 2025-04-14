@@ -1,0 +1,382 @@
+/* Import Nexa Font Family */
+@font-face {
+    font-family: 'Nexa-Light';
+    src: url('../fonts/Nexa-Light.otf');
+}
+
+@font-face {
+    font-family: 'Nexa-Bold';
+    src: url('../fonts/Nexa-Bold.otf');
+}
+
+/* Page Style */
+* {
+    margin: 0;
+}
+
+body {
+    font-family: 'Nexa-Light', sans-serif;
+    background-image: url('../imgs/time-line-bg.jpg');
+    background-size: cover;
+    background-position: center;
+    font-weight: 400;
+    padding: 0px;
+    margin: 0;
+    box-sizing: border-box;
+    height: 100vh;
+    color: #fff;
+    line-height: 1;
+    letter-spacing: 2px;
+}
+
+strong,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: 'Nexa-Bold', sans-serif;
+}
+
+.container {
+    width: 100%;
+    max-width: 1360px;
+    margin: 0 auto;
+}
+
+.time-line {
+    padding: 20px 40px;
+}
+
+.header {
+    display: block;
+    margin-bottom: 20px;
+}
+
+.header p {
+    font-size: 35px;
+    text-transform: uppercase;
+}
+
+.content {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.since-box {
+    width: 5%;
+    border-right: 1px solid #ccc;
+    position: relative;
+}
+
+.since-box p {
+    text-transform: uppercase;
+    transform: rotate(-90deg);
+    position: absolute;
+    bottom: 50px;
+    right: -30px;
+    white-space: nowrap;
+    margin-bottom: 0px;
+    color: #ccc;
+}
+
+.history-items {
+    width: 60%;
+    margin-left: auto;
+    align-self: center;
+    position: relative;
+}
+
+.history-items .history-info-item {
+    position: absolute;
+    top: 50%;
+    opacity: 0;
+    width: 100%;
+    transform: translateY(-50%);
+    transition: opacity 1s;
+    z-index: 1;
+}
+
+.history-items .history-info-item.current {
+    opacity: 1;
+}
+
+.history-items .history-info-item p {
+    margin-bottom: 0px;
+    text-transform: uppercase;
+    line-height: 22px;
+    font-size: 20px;
+    color: #ccc;
+}
+
+.history-items .history-info-item p.p-large {
+    font-size: 40px;
+    color: #fff;
+}
+
+.history-items .history-info-item h1 {
+    margin: 0px 0px 30px;
+    padding: 0px 0px 20px;
+    font-size: 80px;
+    position: relative;
+}
+
+.history-items .history-info-item h1::before {
+    content: '';
+    width: 10%;
+    border-bottom: 3px solid #fff;
+    position: absolute;
+    bottom: 1px;
+    left: 40px;
+    display: block;
+}
+
+.history-items .history-info-item h1::after {
+    content: '';
+    border-bottom: 1px solid #ccc;
+    position: absolute;
+    bottom: 0;
+    left: 40px;
+    right: 0px;
+}
+
+.info-text {
+    padding-left: 20px;
+}
+
+.history-years {
+    width: 15%;
+    position: relative;
+    height: 400px;
+    overflow: hidden;
+}
+
+.history-years a.prev-icon,
+.history-years a.next-icon {
+    color: #fff;
+    position: absolute;
+    left: 45%;
+    text-decoration: none;
+    font-size: 30px;
+    transform: rotate(90deg) translateX(-50%);
+    visibility: hidden;
+}
+
+.history-years a.prev-icon {
+    top: 0;
+}
+
+.history-years a.next-icon {
+    bottom: 0;
+}
+
+.history-years ul.years-list {
+    list-style: none;
+    overflow: auto;
+    height: 80%;
+    width: 100%;
+    position: absolute;
+    top: 30px;
+    padding: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    padding-left: 15px;
+}
+
+.history-years ul.years-list::-webkit-scrollbar {
+    visibility: hidden;
+}
+
+.history-years ul.years-list li {
+    margin: 40px auto;
+    display: block;
+    color: #ccc;
+    text-decoration: none;
+    font-size: 20px;
+    text-align: center;
+    cursor: pointer;
+}
+
+.history-years ul.years-list li.current {
+    color: #fff;
+    font-size: 30px;
+    font-family: 'Nexa-Bold', sans-serif;
+}
+
+/* footer style */
+.footer {
+    display: flex;
+    justify-content: space-between;
+    width: 80%;
+    margin-right: auto;
+    margin-top: 20px;
+    padding-left: 5%;
+}
+
+.footer .explore-link a {
+    text-decoration: none;
+    color: #ccc;
+    text-transform: uppercase;
+    font-size: 12px;
+}
+
+.footer .explore-link a:hover {
+    color: #fff;
+}
+
+.footer .drop-link a {
+    text-decoration: none;
+    color: #ccc;
+    text-transform: uppercase;
+    font-size: 12px;
+    padding: 15px 20px;
+    border: 1px solid #ccc;
+}
+
+.footer .drop-link a:hover {
+    color: #fff;
+    border-color: #fff;
+}
+
+
+/* Media Queries for Mobile and Tablets */
+@media screen and (max-width : 1024px) {
+    .header p {
+        font-size: 25px;
+        text-align: center;
+    }
+
+    .history-items .history-info-item p.p-large {
+        font-size: 20px;
+    }
+
+    .history-items .history-info-item h1 {
+        font-size: 40px;
+        margin: 0px 0px 15px;
+        padding: 0px 0px 10px;
+    }
+
+    .history-items .history-info-item p {
+        font-size: 16px;
+    }
+
+    .history-years {
+        height: 300px;
+    }
+
+    .history-years ul.years-list li {
+        font-size: 16px;
+        margin: 15px 23px;
+    }
+
+    .history-years ul.years-list li.current {
+        font-size: 20px;
+    }
+
+    .footer {
+        margin-top: 0px;
+    }
+
+    .footer .drop-link a {
+        font-size: 10px;
+        padding: 7px 10px;
+    }
+
+    .footer .explore-link a {
+        font-size: 10px;
+    }
+}
+
+@media screen and (max-width : 930px) {
+    .content {
+        flex-direction: column;
+    }
+
+    .since-box,
+    .history-items,
+    .history-years {
+        position: unset;
+        width: 100%;
+    }
+
+    .history-items {
+        position: relative !important;
+        order: 1;
+    }
+
+    .history-years {
+        height: auto;
+        width: 100%;
+        position: relative;
+        padding-top: 10px;
+    }
+
+    .history-items .history-info-item {
+        transform: unset;
+    }
+
+    .since-box {
+        border-right: 0px;
+        border-bottom: 1px solid #ccc;
+    }
+
+    .since-box p {
+        position: unset;
+        transform: unset;
+    }
+
+    .history-years ul.years-list {
+        display: flex;
+        position: unset;
+        left: unset;
+        transform: unset;
+        border-bottom: 1px solid #ccc;
+        width: 95%;
+        margin: 0px auto 10px;
+        padding: 0;
+    }
+
+    .history-years a.prev-icon,
+    .history-years a.next-icon {
+        top: 40%;
+        bottom: unset;
+        transform: translateY(-50%);
+        left: 0;
+        position: absolute;
+    }
+
+    .history-years a.next-icon {
+        left: unset !important;
+        right: 0;
+    }
+
+    .footer {
+        position: absolute;
+        bottom: unset;
+        top: 40px;
+    }
+}
+
+@media screen and (max-width : 630px) {
+    body {
+        background-repeat: no-repeat;
+        background-size: auto;
+        height: unset;
+    }
+
+    .header p {
+        text-align: left;
+    }
+
+    .footer {
+        align-items: flex-end;
+        flex-direction: column;
+        top: 20px;
+    }
+
+    .footer .explore-link {
+        margin-bottom: 10px;
+    }
+}
